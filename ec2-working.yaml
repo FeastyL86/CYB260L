@@ -1,3 +1,7 @@
+# Description of what this change includes
+# Revision number
+# Date
+
 Resources:
   Instance:
     Type: AWS::EC2::Instance
@@ -20,3 +24,9 @@ Resources:
       NetworkInterfaces:
         - AssociatePublicIpAddress: "true"
           DeviceIndex: "0"
+      BlockDeviceMappings:
+      - DeviceName: /dev/sdm
+        Ebs:
+          VolumeType: gp2
+          DeleteOnTermination: false
+          VolumeSize: 20
